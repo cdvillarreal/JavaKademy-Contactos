@@ -1,4 +1,4 @@
-package com.app.services;
+package com.contacts.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.interfaceServices.ContactInterfaceService;
-import com.app.interfaces.ContactInterface;
-import com.app.model.Contact;
+import com.contacts.interfaceServices.ContactInterfaceService;
+import com.contacts.interfaces.ContactInterface;
+import com.contacts.model.Contact;
 
 @Service
 public class ContactService implements ContactInterfaceService{

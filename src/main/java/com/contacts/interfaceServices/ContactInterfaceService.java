@@ -1,9 +1,9 @@
-package com.app.interfaceServices;
+package com.contacts.interfaceServices;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.app.model.Contact;
+import com.contacts.model.Contact;
 
 public interface ContactInterfaceService {
 	public List<Contact>listing();

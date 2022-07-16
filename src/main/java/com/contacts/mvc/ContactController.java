@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.contacts.interfaceServices.ContactInterfaceService;
-import com.contacts.model.Contact;
+import com.contacts.models.ContactModel;
 
 @Controller
 @RequestMapping
@@ -24,26 +24,26 @@ public class ContactController {
 	
 	@GetMapping("/")
 	public String listing(Model model) {
-		List<Contact>contacts=service.listing();
+		List<ContactModel>contacts=service.listing();
 		model.addAttribute("contacts", contacts);
 		return "index";
 	}
 	
 	@GetMapping("/nuevo")
 	public String add(Model model) {
-		model.addAttribute("contact", new Contact());
+		model.addAttribute("contact", new ContactModel());
 		return "form";
 	}
 	
 	@PostMapping("/guardar")
-	public String save(@Validated Contact c, Model model) {
+	public String save(@Validated ContactModel c, Model model) {
 		service.save(c);
 		return "redirect:/";
 	}
 	
 	@GetMapping("/editar/{id}")
 	public String edit(@PathVariable int id, Model model) {
-		Optional<Contact>contact=service.listingId(id);
+		Optional<ContactModel>contact=service.listingId(id);
 		model.addAttribute("contact", contact);
 		return "form";
 	}

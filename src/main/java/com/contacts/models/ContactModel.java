@@ -1,5 +1,6 @@
-package com.contacts.model;
+package com.contacts.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,19 +9,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="contacts")
-public class Contact {
+public class ContactModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true, nullable = false)
 	private int id;
 	private String name;
 	private String lastname;
 	private String email;
 	private String telephone;
 	
-	public Contact() {}
+	public ContactModel() {}
 	
-	public Contact(int id, String name, String lastname, String email, String telephone) {
+	public ContactModel(int id, String name, String lastname, String email, String telephone) {
 		super();
 		this.id = id;
 		this.name = name;

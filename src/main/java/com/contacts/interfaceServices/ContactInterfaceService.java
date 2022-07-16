@@ -3,11 +3,11 @@ package com.contacts.interfaceServices;
 import java.util.List;
 import java.util.Optional;
 
-import com.contacts.model.Contact;
+import com.contacts.models.ContactModel;
 
 public interface ContactInterfaceService {
-	public List<Contact>listing();
-	public Optional<Contact>listingId(int id);
-	public int save(Contact c);
+	public List<ContactModel>listing();
+	public Optional<ContactModel>listingId(int id);
+	public int save(ContactModel c);
 	public void delete(int id);
 }
